@@ -1,4 +1,5 @@
 
+/* eslint-disable no-unused-vars, eqeqeq */
 
 // import './UserList.css';
 import React, { useState, useEffect } from 'react';
@@ -299,7 +300,7 @@ const KycDetails = () => {
                                         <div className='doc-img '>
                                             <img src={detail?.state?.document_image ? detail?.state?.document_image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYRfUe-QsoznVHhioYTZCgqF2XrP4r2uCWoA&s'} alt="NFTLogo" />
                                         </div>
-                                    </div>  
+                                    </div>
                                     <div className='vi-img-main'>
                                         <div className='m-10'>
                                             Document Image
@@ -307,7 +308,7 @@ const KycDetails = () => {
                                         <div className='doc-img '>
                                             <img src={detail?.state?.document_image ? detail?.state?.document_image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYRfUe-QsoznVHhioYTZCgqF2XrP4r2uCWoA&s'} alt="NFTLogo" />
                                         </div>
-                                    </div>                                 
+                                    </div>
                                 </div>
 
                             </div>

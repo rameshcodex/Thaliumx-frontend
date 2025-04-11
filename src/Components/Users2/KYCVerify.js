@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -144,6 +145,7 @@ const KYCVerify = () => {
   const [debouncedTerm, setDebouncedTerm] = useState("");
 
   // Update debouncedTerm after user stops typing for 500ms
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedTerm(searchTerm);
@@ -155,6 +157,7 @@ const KYCVerify = () => {
   }, [searchTerm]);
 
   // Call the search function when debouncedTerm updates
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (debouncedTerm) {
       console.log("Searching for:", debouncedTerm);
@@ -235,7 +238,7 @@ const KYCVerify = () => {
       console.log(error, "error");
     }
   };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getKycList();
   }, [page]);

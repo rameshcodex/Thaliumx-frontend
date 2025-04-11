@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useState } from "react";
 import {
   Avatar,
@@ -58,8 +59,8 @@ const CreateSpotCurrencyPair = () => {
   // });
 
   const schema = yup.object().shape({
-    base_asset_name: yup.string().matches(/[A-Z\s]+/,"Enter in Upper case").required("Base Asset Name is required"),
-    market_asset_name: yup.string().matches(/[A-Z\s]+/,"Enter in Upper case").required("Market Asset Name is required"),
+    base_asset_name: yup.string().matches(/[A-Z\s]+/, "Enter in Upper case").required("Base Asset Name is required"),
+    market_asset_name: yup.string().matches(/[A-Z\s]+/, "Enter in Upper case").required("Market Asset Name is required"),
     pointFilter: yup.number().required("Poiter Filter is required"),
     minNotional: yup.number().typeError("Enter valid Number!").required("Minimum Notation is required"),
     maxNotional: yup.number().typeError("Enter valid Number!").required("Maximum Notation is required"),
@@ -119,11 +120,11 @@ const CreateSpotCurrencyPair = () => {
       }
     }
   };
-console.log(imgUrl)
+  console.log(imgUrl)
   const updatePair = async (details) => {
     try {
       const { data } = await Axios.post(
-        `/edittradepair`, { id: spotCurrencyDetail?._id, updateData: { ...details, type: "SPOT", icon: imgUrl || spotCurrencyDetail?.icon  } },
+        `/edittradepair`, { id: spotCurrencyDetail?._id, updateData: { ...details, type: "SPOT", icon: imgUrl || spotCurrencyDetail?.icon } },
         {
           headers: {
             Authorization: localStorage.getItem("nzanzi"),

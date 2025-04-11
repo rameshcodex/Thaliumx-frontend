@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 // import './UserWithdrawHistry.css';
 import React, { useState, useEffect, useContext, useRef } from 'react';
 // import './Dashboard.css';
@@ -155,7 +156,7 @@ const Asset = () => {
 
   useEffect(() => {
     getAssets();
-  }, [ page, status, search])
+  }, [page, status, search])
 
   useEffect(() => {
     if (searchRef.current?.value == "") {
@@ -190,23 +191,27 @@ const Asset = () => {
   const [modelData, setModelData] = useState({ columns: [], row: [] });
 
   useEffect(() => {
-    const formattedRow = assets?.docs?.map((item,index)=>(
+    const formattedRow = assets?.docs?.map((item, index) => (
       {
         ...item,
         status: item.status == true ? 'Active' : "In Active",
-        createdAt:item.createdAt.split('T')[0],
-        updatedAt:item.updatedAt.split('T')[0],
-        image: (<img src={item.image} width={40} height={40} alt="img"/>),
+        createdAt: item.createdAt.split('T')[0],
+        updatedAt: item.updatedAt.split('T')[0],
+        image: (<img src={item.image} width={40} height={40} alt="img" />),
         action: (
           <Button
             onClick={() => {
               navigate(`/${consts.route + "/createasset"}`,
-                {state:{assetDetails:{
-                  ...item,
-                  createdAt:item.createdAt.split('T')[0],
-                  updatedAt:item.updatedAt.split('T')[0],
-                  // image: (<img src={item.image} width={40} height={40} alt="img"/>),
-                }}}
+                {
+                  state: {
+                    assetDetails: {
+                      ...item,
+                      createdAt: item.createdAt.split('T')[0],
+                      updatedAt: item.updatedAt.split('T')[0],
+                      // image: (<img src={item.image} width={40} height={40} alt="img"/>),
+                    }
+                  }
+                }
               );
             }}
             variant='contained'
@@ -298,10 +303,10 @@ const Asset = () => {
 
             </Grid2>
             <Grid2 item size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}>
-              <ReusableTable 
-              collections={collections}
-              paginationChange={paginationChange}
-              page={page}
+              <ReusableTable
+                collections={collections}
+                paginationChange={paginationChange}
+                page={page}
               />
             </Grid2>
 

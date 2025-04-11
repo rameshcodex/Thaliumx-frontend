@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useContext, useEffect, useRef, useState } from "react";
 import {
   Button,
@@ -94,7 +95,7 @@ const SpotCurrencyPair = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  const handlePopOverClick = (event,data) => {
+  const handlePopOverClick = (event, data) => {
 
     setSpotCurrencyDetail(data);
     setAnchorEl(event.currentTarget);
@@ -163,7 +164,7 @@ const SpotCurrencyPair = () => {
   const getPermissionList = async () => {
 
     try {
-      const { data } = await Axios.post(`/getallownpairs?page=${ page}&limit=10`, {
+      const { data } = await Axios.post(`/getallownpairs?page=${page}&limit=10`, {
         Name: search,
         status: sort
       }, {
@@ -184,7 +185,7 @@ const SpotCurrencyPair = () => {
           obj.CreatedAt = (<div>{element?.createdAt ? `${element?.createdAt?.split("T")[0]}  ${element?.createdAt?.split('T')[1]?.split(":")?.slice(0, 2)?.join(":")}` : "-"}</div>)
           obj.action = (
             <Button
-              onClick={(e) => handlePopOverClick(e,dts[i])}
+              onClick={(e) => handlePopOverClick(e, dts[i])}
               variant='contained'
               className='action-btn'
             >
@@ -220,11 +221,11 @@ const SpotCurrencyPair = () => {
   }, [page, sort, search]);
 
   useEffect(() => {
-      if (searchRef.current?.value == "") {
-        setSearch("")
-        setPage(1);
-      }
-    }, [searchTrack])
+    if (searchRef.current?.value == "") {
+      setSearch("")
+      setPage(1);
+    }
+  }, [searchTrack])
 
   const statusDropdown = ["All", "Active", "In Active"];
 
@@ -372,9 +373,9 @@ const SpotCurrencyPair = () => {
               sx={{ width: "150px" }}
               onClick={() =>
                 navigate(
-          
+
                   `/${consts.route + auth + "/spot/create/currency-pairs"}`,
-                  {state:{spotCurrencyDetail}}
+                  { state: { spotCurrencyDetail } }
                 )
               }
             >

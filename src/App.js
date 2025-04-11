@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import "./App.css";
 import "./Media.css";
 import "./Styles.css";

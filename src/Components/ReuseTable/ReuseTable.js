@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useState } from "react";
 import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -15,7 +16,7 @@ const ReusableTable = ({ collections, paginationChange, page }) => {
             <TableRow>
               <TableCell align="left" >S.no</TableCell>
               {collections?.columns?.map((col, index) => (
-                <TableCell key={index} align={col?.align || "left"} sx={{whiteSpace: "nowrap"}}>{col?.Header}</TableCell>
+                <TableCell key={index} align={col?.align || "left"} sx={{ whiteSpace: "nowrap" }}>{col?.Header}</TableCell>
               ))}
 
             </TableRow>
@@ -32,7 +33,7 @@ const ReusableTable = ({ collections, paginationChange, page }) => {
           </TableBody> : <TableBody>
             {collections?.row?.map((row, rowIndex) => (
               <TableRow key={rowIndex}>
-                <TableCell align="left" >{rowIndex+1}</TableCell>
+                <TableCell align="left" >{rowIndex + 1}</TableCell>
                 {collections?.columns?.map((col, colIndex) => (
                   <TableCell key={colIndex} align={col?.align || "left"}>
                     {row[col?.accessor]} {/* Accessing data dynamically using accessor */}

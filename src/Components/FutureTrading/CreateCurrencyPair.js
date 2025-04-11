@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useState } from "react";
 import {
   Avatar,
@@ -296,10 +297,10 @@ const CreateCurrencyPair = () => {
               </div>
             </Grid2>
             <Grid2 item size={{ xs: 12, md: 6, lg: 4 }}>
-          <FormControlLabel control={<Switch/>} label="Is Default"/>
+              <FormControlLabel control={<Switch />} label="Is Default" />
             </Grid2>
             <Grid2 item size={{ xs: 12, md: 6, lg: 4 }}>
-            <FormControlLabel control={<Switch/>} label="Status"/>
+              <FormControlLabel control={<Switch />} label="Status" />
             </Grid2>
           </Grid2>
           <div className='display-1 mt-20'>

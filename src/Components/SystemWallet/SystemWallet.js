@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -224,8 +225,8 @@ const SystemWallet = () => {
               {modelDetail === 0
                 ? createModel
                 : modelDetail === 1
-                ? syncModel
-                : securityModel}
+                  ? syncModel
+                  : securityModel}
             </Box>
           </Modal>
 

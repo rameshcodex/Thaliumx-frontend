@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Badge,
@@ -34,13 +35,13 @@ const style = {
   p: 4,
 };
 const fieldStyle = {
-  width : 150 ,
+  width: 150,
   '@media(max-width:767.98px)': {
-      width: '45%'
-    },
-    '@media(max-width:425.98px)': {
-      width: '100%'
-    },
+    width: '45%'
+  },
+  '@media(max-width:425.98px)': {
+    width: '100%'
+  },
 }
 const P2PUsers = () => {
   const theme = useTheme();

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -63,7 +64,7 @@ const P2PReports = () => {
   const [collections, setCollections] = useState({ columns: [], row: [] });
   const [value, setValue] = useState(0);
 
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

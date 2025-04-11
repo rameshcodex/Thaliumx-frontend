@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
@@ -102,7 +103,7 @@ const FutureSellOrder = () => {
     setModelDetails("");
 
   };
-  const handlePopOverClick = (event,no) => {
+  const handlePopOverClick = (event, no) => {
     setSelectedData(futureSellOrders?.docs[no])
     setAnchorEl(event.currentTarget);
   };
@@ -246,10 +247,11 @@ const FutureSellOrder = () => {
   const getFutureSellOrders = async () => {
     try {
       const { data } = await Axios.post(
-        `/admin/getfutureorders?limit=10&page=${page}&order=${sort==="Newest First" ? -1 : 1}`,
-        { type: type, search: search,
+        `/admin/getfutureorders?limit=10&page=${page}&order=${sort === "Newest First" ? -1 : 1}`,
+        {
+          type: type, search: search,
           status: status == 0 ? "All" : "NEW",
-          side: 'SELL' 
+          side: 'SELL'
         },
         {
           headers: {
@@ -286,10 +288,10 @@ const FutureSellOrder = () => {
     const formattedRow = futureSellOrders?.docs?.map((item, index) => (
       {
         ...item,
-        createdAt:item.createdAt.split('T')[0],
+        createdAt: item.createdAt.split('T')[0],
         action: (
           <Button
-            onClick={(e)=>handlePopOverClick(e,index)}
+            onClick={(e) => handlePopOverClick(e, index)}
             variant='contained'
             className='action-btn'
           >
@@ -398,7 +400,7 @@ const FutureSellOrder = () => {
                         size='small'
                         onChange={handleWalletTypeChange}
                       >
-                        {typeDropdown.map((item,index)=><MenuItem key={index} value={item}>{item}</MenuItem>)}
+                        {typeDropdown.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
                       </Select>
                     </FormControl>
                   </Box>
@@ -414,7 +416,7 @@ const FutureSellOrder = () => {
                         size='small'
                         onChange={handleCryptoChange}
                       >
-                        {sortDropdown.map((sort,index)=><MenuItem key={index} value={sort}>{sort}</MenuItem>)}
+                        {sortDropdown.map((sort, index) => <MenuItem key={index} value={sort}>{sort}</MenuItem>)}
                       </Select>
                     </FormControl>
                   </Box>
@@ -481,7 +483,7 @@ const FutureSellOrder = () => {
                         size='small'
                         onChange={handleWalletTypeChange}
                       >
-                        {typeDropdown.map((item,index)=><MenuItem key={index} value={item}>{item}</MenuItem>)}
+                        {typeDropdown.map((item, index) => <MenuItem key={index} value={item}>{item}</MenuItem>)}
                       </Select>
                     </FormControl>
                   </Box>
@@ -511,7 +513,7 @@ const FutureSellOrder = () => {
                         size='small'
                         onChange={handleCryptoChange}
                       >
-                        {sortDropdown.map((sort,index)=><MenuItem key={index} value={sort}>{sort}</MenuItem>)}
+                        {sortDropdown.map((sort, index) => <MenuItem key={index} value={sort}>{sort}</MenuItem>)}
                       </Select>
                     </FormControl>
                   </Box>

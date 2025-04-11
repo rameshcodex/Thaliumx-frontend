@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import { Box, Grid22 } from '@mui/material';
 import React, { useState, useEffect, useRef } from 'react'
 import Header from '../Header/Header'

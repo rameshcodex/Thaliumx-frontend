@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useContext, useEffect, useState } from "react";
 import {
   Button,

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 // import './UserWithdrawHistry.css';
 import React, { useState, useEffect, useContext, useRef } from 'react';
 // import './Dashboard.css';
@@ -7,7 +8,7 @@ import Modal from "@mui/material/Modal";
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import {toast} from 'react-hot-toast'
+import { toast } from 'react-hot-toast'
 import ReusableTable from '../ReuseTable/ReuseTable';
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import Reusemodel from '../ReuseModel/Reusemodel';
@@ -273,9 +274,9 @@ const Networks = () => {
     }
   }
 
-  const onSubmit = async (data)=>{
+  const onSubmit = async (data) => {
     console.log(data)
-    updateNetwork({id: selectedData._id, updateData: data});
+    updateNetwork({ id: selectedData._id, updateData: data });
   }
 
 
@@ -482,17 +483,17 @@ const Networks = () => {
 
                 <div className='display-1'>
                   <PinkSwitch
-                  {...register('depositEnable')}
-                  {...label} defaultChecked={selectedData?.depositEnable == 'true' ? true : false} onChange={(() => { setCheck(!check) })} />
+                    {...register('depositEnable')}
+                    {...label} defaultChecked={selectedData?.depositEnable == 'true' ? true : false} onChange={(() => { setCheck(!check) })} />
                   <div>
                     Deposit Enable
                   </div>
                 </div>
 
                 <div className='display-1'>
-                  <PinkSwitch 
-                  {...register('withdrawEnable')}
-                  {...label} defaultChecked={selectedData?.withdrawEnable == 'true' ? true : false} onChange={(() => { setCheck(!check) })} />
+                  <PinkSwitch
+                    {...register('withdrawEnable')}
+                    {...label} defaultChecked={selectedData?.withdrawEnable == 'true' ? true : false} onChange={(() => { setCheck(!check) })} />
                   <div>
                     Withdraw Enable
                   </div>

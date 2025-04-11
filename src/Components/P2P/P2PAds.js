@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
@@ -89,7 +90,7 @@ const P2PAds = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  const handlePopOverClick = (event,no) => {
+  const handlePopOverClick = (event, no) => {
     setSelectedData(p2pAdds?.docs[no])
     setAnchorEl(event.currentTarget);
   };
@@ -249,12 +250,12 @@ const P2PAds = () => {
     setSearchTrack(e.target.value);
   }
 
-console.log(selectedData)
+  console.log(selectedData)
   const getP2PAdds = async () => {
     try {
       const { data } = await Axios.post(
         `/admin/getp2padds?limit=10&page=${page}`,
-        { type: currency, status: status, asset: asset},
+        { type: currency, status: status, asset: asset },
         {
           headers: {
             Authorization: localStorage.getItem("nzanzi"),
@@ -288,19 +289,19 @@ console.log(selectedData)
 
 
   useEffect(() => {
-    const formattedRow = p2pAdds?.docs?.map((item,index) => ({
-        ...item,
-        createdAt:item.createdAt.split('T')[0],
-        action: (
-          <Button
-            onClick={(e)=>handlePopOverClick(e,index)}
-            variant='contained'
-            className='action-btn'
-          >
-            Action
-          </Button>
-        ),
-      }
+    const formattedRow = p2pAdds?.docs?.map((item, index) => ({
+      ...item,
+      createdAt: item.createdAt.split('T')[0],
+      action: (
+        <Button
+          onClick={(e) => handlePopOverClick(e, index)}
+          variant='contained'
+          className='action-btn'
+        >
+          Action
+        </Button>
+      ),
+    }
     ))
     setCollections({
       columns: [

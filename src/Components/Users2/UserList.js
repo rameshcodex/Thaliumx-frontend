@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -70,7 +71,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 700,
   // height:600,
-  overflowY:'scroll',
+  overflowY: 'scroll',
   "@media(max-width:767.98px)": {
     width: "95%",
   },
@@ -83,24 +84,24 @@ const UsersList = () => {
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.up("lg"));
   const [collections, setCollections] = useState({
-      columns: [
-        { Header: "Name", accessor: "name", align: "left" },
-        { Header: "Email", accessor: "email", align: "left" },
-        { Header: "Phone", accessor: "phone", align: "left" },
-        { Header: "Referral Code", accessor: "refcode", align: "left" },
-        { Header: "Status", accessor: "status", align: "left" },
-        { Header: "Action", accessor: "action", align: "left" },
-      ],
-      row: [],
-    });
+    columns: [
+      { Header: "Name", accessor: "name", align: "left" },
+      { Header: "Email", accessor: "email", align: "left" },
+      { Header: "Phone", accessor: "phone", align: "left" },
+      { Header: "Referral Code", accessor: "refcode", align: "left" },
+      { Header: "Status", accessor: "status", align: "left" },
+      { Header: "Action", accessor: "action", align: "left" },
+    ],
+    row: [],
+  });
   const [value, setValue] = useState(0);
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [modelDetails, setModelDetails] = useState("");
-const [userList,setUserList] =useState([])
-const [twoFa,setTwoFa]=useState(false)
-const [usrId,setUsrId]=useState(false)
+  const [userList, setUserList] = useState([])
+  const [twoFa, setTwoFa] = useState(false)
+  const [usrId, setUsrId] = useState(false)
   const handleOpen = (details) => {
     setOpen(true);
     setModelDetails(details);
@@ -211,36 +212,36 @@ const [usrId,setUsrId]=useState(false)
             <div className="display-1">
               <strong> Country : </strong>{userList?.country ? userList?.country : "-"}
             </div>
-            <div className="display-1"> 
+            <div className="display-1">
               <strong>Referral Code : </strong> {userList?.referral_code ? userList?.referral_code : "-"}
             </div>
           </div>
         </Box>
       </Grid2>
-    
+
       <Grid2 item size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
         <Box>
           <div className='p2p-user-head'>Settings</div>
           <div className='mt-10 p2p-user'>
             <div className="display-1">
               <strong>Email Verified:</strong>
-              {userList?.email_verify ? userList?.email_verify === "true" ? <span className='badge'>Verified</span> : <span className='badge-red'>Not-Verified</span> :"-"}
-              
+              {userList?.email_verify ? userList?.email_verify === "true" ? <span className='badge'>Verified</span> : <span className='badge-red'>Not-Verified</span> : "-"}
+
             </div>
-            <div className="display-1"> 
+            <div className="display-1">
               <strong>Kyc Verified: </strong>
-              {userList?.kyc_verify ? userList?.kyc_verify === "true" ? <span className='badge'>Verified</span> : <span className='badge-red'>Not-Verified</span> :"-"}
+              {userList?.kyc_verify ? userList?.kyc_verify === "true" ? <span className='badge'>Verified</span> : <span className='badge-red'>Not-Verified</span> : "-"}
             </div>
             <div className="display-1">
               <strong>Two factor authenticator Verified : </strong>
-              {userList?.f2A_Status ? userList?.f2A_Status === "true" ? <span className='badge'>Verified</span> :(<>
-                <span className='badge-red'>Not-Verified </span> <PublishedWithChangesIcon sx={{fontSize:'18px'}} className="cursor" onClick={()=>{setTwoFa(!twoFa);Reverify()}} />
-              </>  ):"-"}
+              {userList?.f2A_Status ? userList?.f2A_Status === "true" ? <span className='badge'>Verified</span> : (<>
+                <span className='badge-red'>Not-Verified </span> <PublishedWithChangesIcon sx={{ fontSize: '18px' }} className="cursor" onClick={() => { setTwoFa(!twoFa); Reverify() }} />
+              </>) : "-"}
 
             </div>
             <div className="display-1">
               <strong>Identity Verified:</strong>
-              {userList?.verified ? userList?.verified === "true" ? <span className='badge'>Verified</span> : <span className='badge-red'>Not-Verified</span> :"-"}
+              {userList?.verified ? userList?.verified === "true" ? <span className='badge'>Verified</span> : <span className='badge-red'>Not-Verified</span> : "-"}
 
             </div>
             <div className="display-1">
@@ -339,75 +340,75 @@ const [usrId,setUsrId]=useState(false)
     }
   };
 
-  const getUserList = async () =>{
+  const getUserList = async () => {
     try {
-      const {data} = await Axios.post("/admin/getUsers",{
+      const { data } = await Axios.post("/admin/getUsers", {
 
       },
-      {
-        headers:{
-          Authorization:  `Bearer ${window.localStorage.getItem("nzanzi")}`,
+        {
+          headers: {
+            Authorization: `Bearer ${window.localStorage.getItem("nzanzi")}`,
+          }
         }
-      }
-    )
+      )
 
-    console.log(data,'data');
-    
-    if(data?.success == true && data?.result?.docs?.length > 0){
-     var dts = data?.result?.docs;
-            var totalCount = data?.result?.totalPages;
-            var formattedRows = [];
-            for (let i = 0; i < dts.length; i++) {
-              const element = dts[i];
-              var obj = {};
-              obj.sno = <div>{i + 1}</div>;
-              obj.name = (
-                <div>{element?.name ? element?.name : "-"}</div>
-              );
-              obj.refcode = (
-                <div>{element?.referral_code ? element?.referral_code : "-"}</div>
-              );
-              obj.email = <div>{element?.email ? element?.email : "-"}</div>;
-              obj.phone = <div>{element?.phone ? element?.phone : "-"}</div>;
-              obj.status = (
-                <div>
-                  {element?.verified ? element?.verified === true ? 'Verified' : "Unverified" : "-"}
-                </div>
-              );
-              obj.action = (
-                <div className="display-1">
-                  <Button
-                    variant="contained"
-                    onClick={(e) => {
-                      // handleOpen(element);
-                      handlePopOverClick(e)
-                      setUserList(element)
-                    }}
-                  >
-                    Action
-                  </Button>
-                </div>
-              );
-              formattedRows.push(obj);
-            }
-            setCollections((prevState) => ({
-              ...prevState,
-              row: formattedRows,
-              pagecount: totalCount,
-            }));
-          } else {
-            setCollections((prevState) => ({
-              ...prevState,
-              row: [],
-              pagecount: 0,
-            }));
-    }
-      
+      console.log(data, 'data');
+
+      if (data?.success == true && data?.result?.docs?.length > 0) {
+        var dts = data?.result?.docs;
+        var totalCount = data?.result?.totalPages;
+        var formattedRows = [];
+        for (let i = 0; i < dts.length; i++) {
+          const element = dts[i];
+          var obj = {};
+          obj.sno = <div>{i + 1}</div>;
+          obj.name = (
+            <div>{element?.name ? element?.name : "-"}</div>
+          );
+          obj.refcode = (
+            <div>{element?.referral_code ? element?.referral_code : "-"}</div>
+          );
+          obj.email = <div>{element?.email ? element?.email : "-"}</div>;
+          obj.phone = <div>{element?.phone ? element?.phone : "-"}</div>;
+          obj.status = (
+            <div>
+              {element?.verified ? element?.verified === true ? 'Verified' : "Unverified" : "-"}
+            </div>
+          );
+          obj.action = (
+            <div className="display-1">
+              <Button
+                variant="contained"
+                onClick={(e) => {
+                  // handleOpen(element);
+                  handlePopOverClick(e)
+                  setUserList(element)
+                }}
+              >
+                Action
+              </Button>
+            </div>
+          );
+          formattedRows.push(obj);
+        }
+        setCollections((prevState) => ({
+          ...prevState,
+          row: formattedRows,
+          pagecount: totalCount,
+        }));
+      } else {
+        setCollections((prevState) => ({
+          ...prevState,
+          row: [],
+          pagecount: 0,
+        }));
+      }
+
     } catch (error) {
-      console.log(error,'error');
-      
+      console.log(error, 'error');
+
     }
-  } 
+  }
 
   useEffect(() => {
     // setCollections({
@@ -436,27 +437,27 @@ const [usrId,setUsrId]=useState(false)
     getUserList()
   }, []);
 
-  const Reverify = async()=>{
-try {
-  const {data}= await Axios.post("/admin/updateUser",  {
-    userId:usrId,
-    f2A_Status: twoFa
-  },
-  {
-    headers:{
-      Authorization:  `Bearer ${window.localStorage.getItem("nzanzi")}`,
-    }
-  })
+  const Reverify = async () => {
+    try {
+      const { data } = await Axios.post("/admin/updateUser", {
+        userId: usrId,
+        f2A_Status: twoFa
+      },
+        {
+          headers: {
+            Authorization: `Bearer ${window.localStorage.getItem("nzanzi")}`,
+          }
+        })
 
-  if(data?.success === true){
-    getUserList()
-    handleClose()
-  }
-  
-} catch (error) {
-  console.log(error,'error');
-  
-}
+      if (data?.success === true) {
+        getUserList()
+        handleClose()
+      }
+
+    } catch (error) {
+      console.log(error, 'error');
+
+    }
   }
 
   return (
@@ -642,16 +643,16 @@ try {
                   {modelDetails === 0
                     ? "User Details"
                     : modelDetails === 1
-                    ? "User Permission"
-                    : ""}
+                      ? "User Permission"
+                      : ""}
                 </h3>
                 <Close onClick={handleClose} className='cursor' />
               </div>
               {modelDetails === 0
                 ? userDetailsModel
                 : modelDetails === 1
-                ? userPermissionModel
-                : securityModel}
+                  ? userPermissionModel
+                  : securityModel}
             </Box>
           </Modal>
           <Popover

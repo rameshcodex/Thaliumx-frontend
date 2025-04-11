@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 
 // import './UserWithdrawHistry.css';
 import React, { useState, useEffect } from 'react';
@@ -38,25 +39,25 @@ const OrderDetails = () => {
   const [page, setPage] = useState(1);
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.up('lg'));
-  
+
   const [orderStatus, setOrderStatus] = useState('all');
 
-const {pathname} = useLocation()
+  const { pathname } = useLocation()
 
-console.log(orderStatus,pathname,'orderStatus');
+  console.log(orderStatus, pathname, 'orderStatus');
 
-useEffect(() => {
-if(pathname === '/marginfxadmin/orderdetails/all'){
-  setOrderStatus('all')
-}else if(pathname === '/marginfxadmin/orderdetails/open'){
-  setOrderStatus('open')
-}else if(pathname === '/marginfxadmin/orderdetails/closed'){
-  setOrderStatus('closed')
-}
-},[pathname])
+  useEffect(() => {
+    if (pathname === '/marginfxadmin/orderdetails/all') {
+      setOrderStatus('all')
+    } else if (pathname === '/marginfxadmin/orderdetails/open') {
+      setOrderStatus('open')
+    } else if (pathname === '/marginfxadmin/orderdetails/closed') {
+      setOrderStatus('closed')
+    }
+  }, [pathname])
 
   // const Navigate=useNavigate();
-  const tabelHeader = ["User ID", "Customer Name", "Account ID", "Fund", "Balance", 'Equity',"Margin Level", "Group Name", "Total PNL", "Details",
+  const tabelHeader = ["User ID", "Customer Name", "Account ID", "Fund", "Balance", 'Equity', "Margin Level", "Group Name", "Total PNL", "Details",
     //  "Action"
   ];
   return (
@@ -82,49 +83,49 @@ if(pathname === '/marginfxadmin/orderdetails/all'){
                           return (
                             <TableCell align='center'>{val}</TableCell>
                           )
-                         
+
                         })}
 
                       </TableRow>
                     </TableHead>
                     <TableBody>
-                    <TableRow
-                        
-                        >
-                          <TableCell component="th" scope="row" align='center'>
-                          45
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
-                          Venkataramanan
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
-                          10045
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
-                          1483.04
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
-                          1490.90
-                          </TableCell>
+                      <TableRow
 
-                          <TableCell component="th" scope="row" align='center'>
+                      >
+                        <TableCell component="th" scope="row" align='center'>
+                          45
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
+                          Venkataramanan
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
+                          10045
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
+                          1483.04
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
                           1490.90
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
+                        </TableCell>
+
+                        <TableCell component="th" scope="row" align='center'>
+                          1490.90
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
                           18938.68%
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
                           Standard
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
                           199.14
-                          </TableCell>
-                          <TableCell component="th" scope="row" align='center'>
-                      <div className="sho-d">
-                      Show Details
-                      </div>
-                          </TableCell>
-                         </TableRow>
+                        </TableCell>
+                        <TableCell component="th" scope="row" align='center'>
+                          <div className="sho-d">
+                            Show Details
+                          </div>
+                        </TableCell>
+                      </TableRow>
                     </TableBody>
                   </Table>
                 </TableContainer>
@@ -146,4 +147,3 @@ if(pathname === '/marginfxadmin/orderdetails/all'){
 };
 
 export default OrderDetails;
-  

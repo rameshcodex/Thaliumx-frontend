@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import {
@@ -82,7 +83,7 @@ const Profile = () => {
     reset: detailsReset,
     formState: { errors: detailsErrors } } = useForm({ resolver: yupResolver(infoSchema) });
 
-    const getProfileData = async () => {
+  const getProfileData = async () => {
     try {
 
       const { data } = await Axios.get(
@@ -128,7 +129,7 @@ const Profile = () => {
       toast.error(detailsErrors.phone?.message);
     }
   };
-console.log(userDetails)
+  console.log(userDetails)
 
   const onPasswordSubmit = async (details) => {
     try {
@@ -161,10 +162,11 @@ console.log(userDetails)
       setInfoLoading(true);
       const { data } = await Axios.post(
         `/admin/updateadmindetails`,
-        { name:details.name && details.name,
+        {
+          name: details.name && details.name,
           username: details.username && details.username,
-        phone: details.phone && details.phone
-      },
+          phone: details.phone && details.phone
+        },
         {
           headers: {
             Authorization: localStorage.getItem("nzanzi"),

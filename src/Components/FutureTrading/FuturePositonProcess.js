@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -11,13 +12,13 @@ import Tab from "@mui/material/Tab";
 import ReusableTable from "../ReuseTable/ReuseTable";
 const drawerWidth = 260;
 const fieldStyle = {
-  width : 150 ,
+  width: 150,
   '@media(max-width:767.98px)': {
-      width: '45%'
-    },
-    '@media(max-width:425.98px)': {
-      width: '100%'
-    },
+    width: '45%'
+  },
+  '@media(max-width:425.98px)': {
+    width: '100%'
+  },
 }
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -257,13 +258,13 @@ const FuturePositionProcess = () => {
                     </FormControl>
                   </Box>
                 </div>
-               <div className="mt-20">
-               <ReusableTable
-                  collections={collections}
-                  paginationChange={paginationChange}
-                  page={page}
-                />
-               </div>
+                <div className="mt-20">
+                  <ReusableTable
+                    collections={collections}
+                    paginationChange={paginationChange}
+                    page={page}
+                  />
+                </div>
               </CustomTabPanel>
             </Grid2>
           </Grid2>

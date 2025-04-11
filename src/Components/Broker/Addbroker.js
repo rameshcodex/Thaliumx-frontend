@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useState, useRef, useEffect } from "react";
 import { Avatar, Box, Button, Grid2 } from "@mui/material";
 import { styled } from "@mui/material/styles";

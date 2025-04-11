@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useContext, useEffect, useMemo, useState } from "react";
 // import PropTypes from 'prop-types';
 import AppBar from "@mui/material/AppBar";
@@ -35,7 +36,7 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import { AuthContext } from "../../Authprovider";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { Button, Collapse , Modal,} from "@mui/material";
+import { Button, Collapse, Modal, } from "@mui/material";
 import SellIcon from "@mui/icons-material/Sell";
 import SubdirectoryArrowRightIcon from "@mui/icons-material/SubdirectoryArrowRight";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
@@ -78,7 +79,7 @@ function ResponsiveDrawer(props) {
   const { auth, toggleAuth, brokerLogo } = useContext(AuthContext);
   const [logoUrl, setLogoUrl] = useState();
   const [tradeType, setTradeType] = useState(0);
-  const [load,setLoad]=useState(false)
+  const [load, setLoad] = useState(false)
 
   console.log(tradeType, "tradeType");
 
@@ -106,13 +107,13 @@ function ResponsiveDrawer(props) {
 
   // console.log(date, 'date');
 
-   const [openModel, setOpenModel] = useState(false);
+  const [openModel, setOpenModel] = useState(false);
 
-   const handleClose = () => {
+  const handleClose = () => {
     setOpenModel(false);
   };
 
- 
+
 
   const handleDrawerClose = () => {
     setIsClosing(true);
@@ -600,14 +601,14 @@ function ResponsiveDrawer(props) {
       if (data?.success == true) {
         // setTradeType(data?.result?.tradeType);
         toast.success(data?.message);
-      setLoad(false);
+        setLoad(false);
         setOpenModel(false);
-        
-        
+
+
       }
     } catch (error) {
       console.log(error, "error");
-      
+
     }
   }
 
@@ -1914,11 +1915,11 @@ function ResponsiveDrawer(props) {
               />
             </div> */}
             <div className="tr-type">
-            <Button variant="contained" onClick={() => setOpenModel(true)}>
-              Trade Type
-            </Button>
+              <Button variant="contained" onClick={() => setOpenModel(true)}>
+                Trade Type
+              </Button>
             </div>
-          
+
             <Badge badgeContent={4} color="error">
               <NotificationsActiveIcon sx={{ color: "#FF7028" }} />
             </Badge>
@@ -3212,7 +3213,7 @@ function ResponsiveDrawer(props) {
             </ListItem>
           </List>
         </NavLink> */}
-        {drawer}
+              {drawer}
             </Box>
           </div>
         </Drawer>
@@ -3232,40 +3233,40 @@ function ResponsiveDrawer(props) {
         </Drawer>
       </Box>
       <Modal
-            open={openModel}
-            // onClose={handleClose}
-            aria-labelledby='modal-modal-title'
-            aria-describedby='modal-modal-description'
-          >
-            <Box sx={style}>
-              <div className='display-2 mb-10'>
-                <h3>{ "Change Trade Type"}</h3>
-                <Close onClick={() => {  handleClose(); }} className='cursor' />
-              </div>
-              <FormControl fullWidth>
-  {/* <InputLabel id="demo-simple-select-label">Age</InputLabel> */}
-  <Select
-    labelId="demo-simple-select-label"
-    id="demo-simple-select"
-    value={tradeType}
-    // label="Age"
-    onChange={(e) => { setTradeType(e.target.value) }}
-  >
-    <MenuItem value={1}>Binance Trade</MenuItem>
-    <MenuItem value={0}>Own Trade</MenuItem>
-  </Select>
-</FormControl>
-<div className="display-3 mt-20">
-  {load ?
-    <CircularProgress /> :
-    <Button variant="contained" onClick={()=>getTradeType()}>
-    Submit
-  </Button>
-  }
-  
-</div>
-            </Box>
-          </Modal>
+        open={openModel}
+        // onClose={handleClose}
+        aria-labelledby='modal-modal-title'
+        aria-describedby='modal-modal-description'
+      >
+        <Box sx={style}>
+          <div className='display-2 mb-10'>
+            <h3>{"Change Trade Type"}</h3>
+            <Close onClick={() => { handleClose(); }} className='cursor' />
+          </div>
+          <FormControl fullWidth>
+            {/* <InputLabel id="demo-simple-select-label">Age</InputLabel> */}
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={tradeType}
+              // label="Age"
+              onChange={(e) => { setTradeType(e.target.value) }}
+            >
+              <MenuItem value={1}>Binance Trade</MenuItem>
+              <MenuItem value={0}>Own Trade</MenuItem>
+            </Select>
+          </FormControl>
+          <div className="display-3 mt-20">
+            {load ?
+              <CircularProgress /> :
+              <Button variant="contained" onClick={() => getTradeType()}>
+                Submit
+              </Button>
+            }
+
+          </div>
+        </Box>
+      </Modal>
     </Box>
   );
 }

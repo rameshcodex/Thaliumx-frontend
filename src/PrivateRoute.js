@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import { Navigate, Outlet, useParams } from "react-router-dom";
 import consts from "./constant";

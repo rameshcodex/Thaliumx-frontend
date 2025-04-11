@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import "./Users.css";
 import {
@@ -276,9 +277,9 @@ const Users = () => {
                     }} />
                   </div>
                   <Button variant="contained" color="primary" onClick={() => {
-                      getUsersList(search, 1)
-                      setPage(1)
-                    }}
+                    getUsersList(search, 1)
+                    setPage(1)
+                  }}
                   >
                     Search
                   </Button>

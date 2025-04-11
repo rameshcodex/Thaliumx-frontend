@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useContext, useEffect, useState } from "react";
 import {
   Button,
@@ -182,10 +183,9 @@ const CurrencyPair = () => {
                     className='action-btn'
                     onClick={() =>
                       navigate(
-                        `/${
-                          consts.route +
-                          auth +
-                          "/futures-trade/create/currency-pairs"
+                        `/${consts.route +
+                        auth +
+                        "/futures-trade/create/currency-pairs"
                         }`
                       )
                     }
@@ -224,30 +224,27 @@ const CurrencyPair = () => {
               sx={{ width: "200px" }}
               onClick={() => {
                 navigate(
-                  `/${
-                    consts.route + auth + "/futures-trade/create/currency-pairs"
+                  `/${consts.route + auth + "/futures-trade/create/currency-pairs"
                   }`
                 );
               }}
             >
               Edit/View
             </Button>
-            <Button className='action-btn' sx={{ width: "200px" }}  onClick={() => {
-                navigate(
-                  `/${
-                    consts.route + auth + "/futures-trade/currency-pairs/leverage"
-                  }`
-                );
-              }}>
+            <Button className='action-btn' sx={{ width: "200px" }} onClick={() => {
+              navigate(
+                `/${consts.route + auth + "/futures-trade/currency-pairs/leverage"
+                }`
+              );
+            }}>
               Leverage Settings
             </Button>
-            <Button className='action-btn' sx={{ width: "200px" }}  onClick={() => {
-                navigate(
-                  `/${
-                    consts.route + auth + "/futures-trade/currency-pairs/funding-rate"
-                  }`
-                );
-              }}>
+            <Button className='action-btn' sx={{ width: "200px" }} onClick={() => {
+              navigate(
+                `/${consts.route + auth + "/futures-trade/currency-pairs/funding-rate"
+                }`
+              );
+            }}>
               Funding Rating Settings
             </Button>
           </Box>

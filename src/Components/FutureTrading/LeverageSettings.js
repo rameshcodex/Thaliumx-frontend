@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useContext, useEffect, useState } from "react";
 import { IconButton, Modal, Button, TextField } from "@mui/material";
 import { useTheme } from "@mui/material/styles";

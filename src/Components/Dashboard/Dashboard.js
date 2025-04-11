@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useState, useEffect } from "react";
 import "./Dashboard.css";
 import { Box, Button, Grid2 } from "@mui/material";
@@ -22,7 +23,7 @@ const Dashboard = () => {
   const [coinTable, setCoinTable] = useState({ columns: [], row: [] });
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.up("lg"));
-  
+
   const chartOptionsByWeek = {
     options: {
       xaxis: {
@@ -31,7 +32,7 @@ const Dashboard = () => {
     },
     series: [
       {
-        data: [0, 0.5, 1, 2, 1,1,1],
+        data: [0, 0.5, 1, 2, 1, 1, 1],
       },
     ],
   };
@@ -120,24 +121,24 @@ const Dashboard = () => {
     setuserChart({
       options: {
         xaxis: {
-          categories: analyticsData?.dailyLogins?.map(logins=>logins._id),
+          categories: analyticsData?.dailyLogins?.map(logins => logins._id),
         },
       },
       series: [
         {
-          data: analyticsData?.dailyLogins?.map(logins=>logins.count.toFixed(2)),
+          data: analyticsData?.dailyLogins?.map(logins => logins.count.toFixed(2)),
         },
       ],
     });
     setDailyChart({
       options: {
         xaxis: {
-          categories: analyticsData?.dailyRevenues?.map(revenue=>revenue._id),
+          categories: analyticsData?.dailyRevenues?.map(revenue => revenue._id),
         },
       },
       series: [
         {
-          data: analyticsData?.dailyRevenues?.map(revenue=>revenue.value.toFixed(2)),
+          data: analyticsData?.dailyRevenues?.map(revenue => revenue.value.toFixed(2)),
         },
       ],
     });
@@ -383,8 +384,8 @@ const Dashboard = () => {
                   <p>Coin Wise revenue</p>
                 </div>
                 <div>
-                  <Button variant="contained" startIcon={<FileDownloadIcon/>} className="data-btn">
-                   Export
+                  <Button variant="contained" startIcon={<FileDownloadIcon />} className="data-btn">
+                    Export
                   </Button>
                   <ReusableTable collections={coinTable} />
                 </div>

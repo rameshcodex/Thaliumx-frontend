@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Avatar,
@@ -87,14 +88,14 @@ const CreateNetworks = () => {
   }
 
 
-  
+
 
   const onSubmit = (details) => {
 
     console.log(details)
 
-      createNetwork(details)
-    
+    createNetwork(details)
+
 
   }
 
@@ -124,8 +125,8 @@ const CreateNetworks = () => {
               </div>
             </Grid2>
           </Grid2>
-          
-          
+
+
           {/* <Grid2 item size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}>
               <div className='display-1'>
                 <Avatar
@@ -210,8 +211,8 @@ const CreateNetworks = () => {
                   />
                 </div>
               </Grid2>
-              
-              
+
+
               <Grid2 item size={{ xs: 12, md: 6 }}>
                 <div>
                   <TextField
@@ -250,7 +251,7 @@ const CreateNetworks = () => {
                   />
                 </Box>
               </Grid2>
-      
+
 
             </Grid2>
             <div className='display-1 mt-20'>

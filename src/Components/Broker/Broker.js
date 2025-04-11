@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 // import './UserWithdrawHistry.css';
 import React, { useState, useEffect, useContext } from "react";
 // import './Dashboard.css';

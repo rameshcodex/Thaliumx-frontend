@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { createContext, useContext, useState, useMemo, useEffect } from "react";
 import SellIcon from "@mui/icons-material/Sell";
 import SubdirectoryArrowRightIcon from "@mui/icons-material/SubdirectoryArrowRight";

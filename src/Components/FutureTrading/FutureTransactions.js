@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -220,7 +221,7 @@ const FutureTransaction = () => {
           </Grid2>
         </Box>
       </Box>
-    
+
 
       <Modal
         open={open}

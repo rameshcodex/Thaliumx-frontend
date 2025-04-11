@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useContext, useEffect, useState } from "react";
 import {
   Button,
@@ -17,13 +18,13 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Authprovider";
 const drawerWidth = 260;
 const fieldStyle = {
-  width : 150 ,
+  width: 150,
   '@media(max-width:767.98px)': {
-      width: '45%'
-    },
-    '@media(max-width:425.98px)': {
-      width: '100%'
-    },
+    width: '45%'
+  },
+  '@media(max-width:425.98px)': {
+    width: '100%'
+  },
 }
 const SystemDeposit = () => {
   const theme = useTheme();
@@ -114,13 +115,13 @@ const SystemDeposit = () => {
                   </Button>
                 </div>
               </div>
-           <div className="margin-top">
-           <ReusableTable
-                collections={collections}
-                paginationChange={paginationChange}
-                page={page}
-              />
-           </div>
+              <div className="margin-top">
+                <ReusableTable
+                  collections={collections}
+                  paginationChange={paginationChange}
+                  page={page}
+                />
+              </div>
 
             </Grid2>
           </Grid2>

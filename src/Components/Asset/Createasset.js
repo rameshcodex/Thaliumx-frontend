@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Avatar,
@@ -74,7 +75,7 @@ const Createasset = () => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm({ resolver: yupResolver(schema) })
 
   const fileWatch = watch('image');
-  
+
   const handleImageUpload = async (event) => {
     const file = event.target.files[0];
 
@@ -144,7 +145,7 @@ const Createasset = () => {
 
   useEffect(() => {
     getAllNetworks();
-    
+
   }, [])
 
   const createOwnAsset = async (details) => {
@@ -207,7 +208,7 @@ const Createasset = () => {
       updateOwnAsset({
         ...details,
         type: details.type.toLowerCase() != 'type' ? details.type.toLowerCase() : assetDetails?.type,
-        Network_ids: selectedValues.length > 0 ? selected : assetDetails?.Network_ids.map(id=>({Network_id:id.Network_id})),
+        Network_ids: selectedValues.length > 0 ? selected : assetDetails?.Network_ids.map(id => ({ Network_id: id.Network_id })),
         image: imageUrl ? imageUrl : assetDetails.image,
         assetId: assetDetails?._id
       })

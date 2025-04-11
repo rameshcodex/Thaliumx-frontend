@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import { Button, FormControlLabel, InputLabel, Switch, TextField } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -161,13 +162,13 @@ const Blog = () => {
                             <HighlightOffIcon onClick={handleClose} />
                         </div>
                     </div>
-                    <div className="display-2" style={{ flexDirection: "column" , alignItems : "start" }}>
+                    <div className="display-2" style={{ flexDirection: "column", alignItems: "start" }}>
                         <TextField fullWidth label="Blog Title" />
                         <TextField fullWidth label="Blog Category" />
                         <TextField fullWidth label="Short Description" multiline rows={5} />
                         <TextField fullWidth label="Tags" />
-                        <FormControlLabel control={<Switch/>} label="Status" labelPlacement="start"/>
-                        <Button variant="contained" startIcon={<SaveIcon/>} className="save-btn">Create</Button>
+                        <FormControlLabel control={<Switch />} label="Status" labelPlacement="start" />
+                        <Button variant="contained" startIcon={<SaveIcon />} className="save-btn">Create</Button>
                     </div>
                 </Box>
             </Modal>

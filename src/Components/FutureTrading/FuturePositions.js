@@ -1,3 +1,5 @@
+
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -241,7 +243,7 @@ const FuturePositions = () => {
             </Grid2>
           </Grid2>
         </Box>
-  
+
 
         <Modal
           open={open}

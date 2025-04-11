@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import {
   Button,
@@ -22,13 +23,13 @@ import ReusableTable from "../ReuseTable/ReuseTable";
 import { Close } from "@mui/icons-material";
 const drawerWidth = 260;
 const fieldStyle = {
-  width : 150 ,
+  width: 150,
   '@media(max-width:767.98px)': {
-      width: '45%'
-    },
-    '@media(max-width:425.98px)': {
-      width: '100%'
-    },
+    width: '45%'
+  },
+  '@media(max-width:425.98px)': {
+    width: '100%'
+  },
 }
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -788,7 +789,7 @@ const UserWithdrawel = () => {
                 ...style,
                 width:
                   modelDetails === "Withdrawal Request Details" ||
-                  modelDetails === "Withdrawal Details"
+                    modelDetails === "Withdrawal Details"
                     ? 760
                     : 500,
               }}
@@ -800,8 +801,8 @@ const UserWithdrawel = () => {
               {modelDetails === "Withdrawal Request Details"
                 ? reqStatusModel
                 : modelDetails === "Withdrawal Details"
-                ? withdrawRequestModel
-                : securityModel}
+                  ? withdrawRequestModel
+                  : securityModel}
             </Box>
           </Modal>
           <Popover

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useState } from "react";
 import { Avatar, Box, Button, Grid2 } from "@mui/material";
 import { styled } from '@mui/material/styles';
@@ -19,7 +20,7 @@ const CraetePair = () => {
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.up("lg"));
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const [buysell, setBuySell] = useState(10);
 
@@ -29,20 +30,20 @@ const CraetePair = () => {
 
   const [imageUrl, setImageUrl] = useState(null);
 
-const handleImageUpload = (event) => {
+  const handleImageUpload = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
 
     console.log(reader, "result of file");
 
     reader.onloadend = () => {
-        setImageUrl(reader.result);
+      setImageUrl(reader.result);
     };
 
     if (file) {
-        reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
     }
-};
+  };
 
   const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
@@ -73,28 +74,28 @@ const handleImageUpload = (event) => {
           <Grid2 container spacing={2}>
             <Grid2 item size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}>
               <div className="display-1">
-              <ArrowBackIosIcon className="cursor" onClick={() => navigate(-1)} />
+                <ArrowBackIosIcon className="cursor" onClick={() => navigate(-1)} />
                 <h2>Create Pair</h2>
               </div>
             </Grid2>
             <Grid2 item size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}>
               <div className="display-1">
-              <Avatar alt="Remy Sharp" src={imageUrl}   sx={{ width: 56, height: 56 }} />
-              <div className="">
-                <Button
-      component="label"
-      role={undefined}
-      variant="contained"
-      tabIndex={-1}
-    >
-     Upload
-      <VisuallyHiddenInput
-        type="file"
-        onChange={handleImageUpload} 
-        multiple
-      />
-    </Button>
-              </div>
+                <Avatar alt="Remy Sharp" src={imageUrl} sx={{ width: 56, height: 56 }} />
+                <div className="">
+                  <Button
+                    component="label"
+                    role={undefined}
+                    variant="contained"
+                    tabIndex={-1}
+                  >
+                    Upload
+                    <VisuallyHiddenInput
+                      type="file"
+                      onChange={handleImageUpload}
+                      multiple
+                    />
+                  </Button>
+                </div>
               </div>
               <div className="add-suer-input">
                 <TextField

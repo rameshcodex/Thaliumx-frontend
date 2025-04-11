@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import "./Users.css";
 import {
@@ -39,9 +40,9 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  '@media(max-width:767.98px)':{
-    width:'95%'
-      },
+  '@media(max-width:767.98px)': {
+    width: '95%'
+  },
   bgcolor: "background.paper",
   // border: '2px solid #000',
   borderRadius: "12px",

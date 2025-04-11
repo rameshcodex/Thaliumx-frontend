@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
@@ -91,7 +92,7 @@ const FutureBuyOrder = () => {
   const [selectedData, setSelectedData] = useState({});
   const [sort, setSort] = useState("Newest First");
   const [searchTrack, setSearchTrack] = useState("");
-  const [status,setStatus] = useState(0);
+  const [status, setStatus] = useState(0);
 
   const handleOpen = (detail) => {
     setOpen(true);
@@ -100,7 +101,7 @@ const FutureBuyOrder = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  const handlePopOverClick = (event,no) => {
+  const handlePopOverClick = (event, no) => {
     setSelectedData(futureBuyOrders?.docs[no])
     setAnchorEl(event.currentTarget);
   };
@@ -195,7 +196,7 @@ const FutureBuyOrder = () => {
             </div>
             <div>
               <strong>Volume : </strong>
-              {selectedData?.price*selectedData?.quantity}
+              {selectedData?.price * selectedData?.quantity}
             </div>
             {/* <div>
               <strong>Amount : </strong>
@@ -247,11 +248,13 @@ const FutureBuyOrder = () => {
   const getFutureBuyOrders = async () => {
     try {
       const { data } = await Axios.post(
-        `/admin/getfutureorders?limit=10&page=${page}&order=${ sort == "Newest First" ? -1 : 1}`,
-        { type: type,
+        `/admin/getfutureorders?limit=10&page=${page}&order=${sort == "Newest First" ? -1 : 1}`,
+        {
+          type: type,
           search: search,
           status: status == 0 ? "All" : "NEW",
-           side: 'BUY' },
+          side: 'BUY'
+        },
         {
           headers: {
             Authorization: localStorage.getItem("nzanzi"),
@@ -288,7 +291,7 @@ const FutureBuyOrder = () => {
     const formattedRow = futureBuyOrders?.docs?.map((item, index) => (
       {
         ...item,
-        createdAt:item.createdAt.split('T')[0],
+        createdAt: item.createdAt.split('T')[0],
         action: (
           <Button
             onClick={(e) => handlePopOverClick(e, index)}

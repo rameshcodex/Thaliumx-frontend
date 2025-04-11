@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useState } from "react";
 import "./Withdraw.css";
 import {
@@ -69,11 +70,11 @@ const Withdraw = () => {
     register: editUsr,
     handleSubmit: handleEditUser,
     setValue,
-    getValues:blockUser,
+    getValues: blockUser,
     formState: { errors: errorsEditUser },
   } = useForm();
 
-  const { setValue:setDeleteUser, getValues } = useForm();
+  const { setValue: setDeleteUser, getValues } = useForm();
 
   const onSubmitUser = (data) => {
     console.log(data);
@@ -91,26 +92,26 @@ const Withdraw = () => {
   const [openEdit, setOpenEdit] = useState(false);
   const handleOpenEdit = (val) => {
     setOpenEdit(true);
-    setValue("name",val.name);
-    setValue("email",val.email);
-    setValue("country",val.country);
-    setValue("phone",val.phone);
+    setValue("name", val.name);
+    setValue("email", val.email);
+    setValue("country", val.country);
+    setValue("phone", val.phone);
 
   };
   const handleCloseEdit = () => {
     setOpenEdit(false);
   };
 
-  const [OpenDeleteUser,setOpenDeleteUser]=useState(false)
+  const [OpenDeleteUser, setOpenDeleteUser] = useState(false)
 
   const handleOpenDelete = (val) => {
     setOpenDeleteUser(true);
-    setDeleteUser("name",val.name)
-  
+    setDeleteUser("name", val.name)
+
   }
   const handleCloseDelete = () => setOpenDeleteUser(false);
 
-  const [check,setCheck]=useState(false)
+  const [check, setCheck] = useState(false)
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -141,61 +142,61 @@ const Withdraw = () => {
     },
   ]);
 
-  
-const [collections,setCollections]=useState({columns:[],row:[]})
+
+  const [collections, setCollections] = useState({ columns: [], row: [] })
 
 
-useEffect(()=>{
-  
-setCollections({
-  columns:[
-    {Header:'Sno',accessor:'sno',align:'left'},
-    {Header:'Date & Time',accessor:'date',align:'left'},
-    {Header:'First Name	',accessor:'fname',align:'left'},
-    {Header:'Last Name',accessor:'lname',align:'left'},
-    {Header:'Email',accessor:'email',align:'left'},
-    {Header:'Gender',accessor:'gender',align:'left'},
-    {Header:'DOB',accessor:'dob',align:'left'},
-  ],
-  row:[
-    {
-      sno:(<div>
-      1
-      </div>),
-       date:(<div>
-        7/2/2025, 6:44:44 pm	
-        </div>),
-      fname:(<div>
-        Sankar
-        </div>),
-          lname:(<div>
+  useEffect(() => {
+
+    setCollections({
+      columns: [
+        { Header: 'Sno', accessor: 'sno', align: 'left' },
+        { Header: 'Date & Time', accessor: 'date', align: 'left' },
+        { Header: 'First Name	', accessor: 'fname', align: 'left' },
+        { Header: 'Last Name', accessor: 'lname', align: 'left' },
+        { Header: 'Email', accessor: 'email', align: 'left' },
+        { Header: 'Gender', accessor: 'gender', align: 'left' },
+        { Header: 'DOB', accessor: 'dob', align: 'left' },
+      ],
+      row: [
+        {
+          sno: (<div>
+            1
+          </div>),
+          date: (<div>
+            7/2/2025, 6:44:44 pm
+          </div>),
+          fname: (<div>
             Sankar
-            </div>),
-         dob:(
-          <div>
-            1986-02-16	
-          </div>
-        ),
-        gender:(
-          <div>
-            Male	
-          </div>
-        ),
-      email:(<div>
-       mymail@mailinator.com	
-        </div>),
-        
-     
-    }
-  ],
-  // row:[]
-})
-  },[])
+          </div>),
+          lname: (<div>
+            Sankar
+          </div>),
+          dob: (
+            <div>
+              1986-02-16
+            </div>
+          ),
+          gender: (
+            <div>
+              Male
+            </div>
+          ),
+          email: (<div>
+            mymail@mailinator.com
+          </div>),
+
+
+        }
+      ],
+      // row:[]
+    })
+  }, [])
 
 
   return (
     <div className="users-container">
-        <Box sx={{ display: lg ? "flex" : "block" }}>
+      <Box sx={{ display: lg ? "flex" : "block" }}>
         <Header />
         <Box
           component="main"
@@ -206,37 +207,37 @@ setCollections({
             marginTop: "50px",
           }}
         >
- <Grid2 container spacing={2}>
+          <Grid2 container spacing={2}>
             <Grid2 item size={{ xs: 12, sm: 12, md: 12, lg: 12, xl: 12 }}>
               <div className="display-2">
                 <h2>Withdraw History</h2>
                 <div className="display-1">
-                <div class="group">
-  <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
-    <g>
-      <path
-        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-      ></path>
-    </g>
-  </svg>
-  <input class="input2" type="search" placeholder="Search" />
-</div>
-<Button
-                  variant="contained"
-                  color="primary"
+                  <div class="group">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+                      <g>
+                        <path
+                          d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                        ></path>
+                      </g>
+                    </svg>
+                    <input class="input2" type="search" placeholder="Search" />
+                  </div>
+                  <Button
+                    variant="contained"
+                    color="primary"
                   // onClick={handleOpen}
-                >
-                  Search
-                </Button>
-<Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleOpen}
-                >
-                  Add User
-                </Button>
+                  >
+                    Search
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleOpen}
+                  >
+                    Add User
+                  </Button>
                 </div>
-               
+
               </div>
 
               {/* <TableContainer component={Paper}>
@@ -286,14 +287,14 @@ setCollections({
                   </TableBody>
                 </Table>
               </TableContainer> */}
-              <ReusableTable collections={collections}   />
+              <ReusableTable collections={collections} />
             </Grid2>
           </Grid2>
         </Box>
-        </Box>
-         
-      
-     
+      </Box>
+
+
+
 
       <Modal
         open={open}
@@ -438,7 +439,7 @@ setCollections({
         </Box>
       </Modal>
 
-    
+
 
       {/*Delete User */}
       <Modal
@@ -453,21 +454,21 @@ setCollections({
           </div>
           <h2 className="text-center">Aare yo Sure you want to Delete {getValues("name")}</h2>
           <div className="display-3 mt-20">
-              <Button variant="contained" color="primary" type="submit">
-                Delete
-              </Button>
-              <Button
-                variant="contained"
-                color="error"
-                style={{ marginLeft: "8px" }}
-                onClick={()=>{handleCloseDelete()}}
-              >
-                Cancel
-              </Button>
-            </div>
-          </Box>
-          </Modal>
-          
+            <Button variant="contained" color="primary" type="submit">
+              Delete
+            </Button>
+            <Button
+              variant="contained"
+              color="error"
+              style={{ marginLeft: "8px" }}
+              onClick={() => { handleCloseDelete() }}
+            >
+              Cancel
+            </Button>
+          </div>
+        </Box>
+      </Modal>
+
     </div>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, eqeqeq */
 import React, { useEffect, useRef, useState } from "react";
 import {
   Button,
@@ -135,23 +136,27 @@ const P2POrders = () => {
   }, [searchTrack])
 
   const typeDropdown = ["All", "BUY", "SELL"];
-  const statusDropdown = ["All", "Cancelled", "Open","Pending"];
+  const statusDropdown = ["All", "Cancelled", "Open", "Pending"];
 
 
   useEffect(() => {
-    const formattedRow = p2pOrders?.docs?.map((item,index)=>(
+    const formattedRow = p2pOrders?.docs?.map((item, index) => (
       {
         ...item,
-        createdAt:item.createdAt.split('T')[0],
+        createdAt: item.createdAt.split('T')[0],
         action: (
           <Button
             onClick={() => {
               navigate(`/${consts.route + "/p2p/order-details"}`,
-                {state:{p2pOrderDetails:{
-                  ...item,
-                  createdAt:item.createdAt.split('T')[0],
-                  updatedAt:item.updatedAt.split('T')[0],
-                }}}
+                {
+                  state: {
+                    p2pOrderDetails: {
+                      ...item,
+                      createdAt: item.createdAt.split('T')[0],
+                      updatedAt: item.updatedAt.split('T')[0],
+                    }
+                  }
+                }
               );
             }}
             variant='contained'
@@ -332,7 +337,7 @@ const P2POrders = () => {
                         onChange={handleType}
                         size='small'
                       >
-                        {typeDropdown.map((type,typeIndex)=><MenuItem key={typeIndex} value={type}>{type}</MenuItem>)}
+                        {typeDropdown.map((type, typeIndex) => <MenuItem key={typeIndex} value={type}>{type}</MenuItem>)}
                       </Select>
                     </FormControl>
                   </Box>
