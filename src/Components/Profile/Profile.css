@@ -1,0 +1,56 @@
+.profile {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+.profile .title {
+  margin-bottom: 20px;
+}
+.profile .profile-card {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.profile .usr-detail {
+  flex-direction: column;
+  gap: 2px;
+}
+.usr-name {
+  color: #6e6e6e;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px;
+}
+.usr-detail .usr-name {
+  margin: 0;
+}
+.save-btn {
+  text-transform: capitalize !important;
+}
+.img-upload {
+  position: relative;
+  width: 300px;
+}
+.img-contianer {
+  height: 200px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.img-contianer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.upload-btn {
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.784);
+  position: absolute;
+  top: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 50%;
+  right: 10px;
+}
+@media screen and (max-width : 425px) {
+  .img-upload{
+    width: 80%;
+  }
+}

@@ -1,0 +1,141 @@
+.auth-page {
+    /* background-image: url(../../../Images/auth-bg.webp); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-left-part {
+    padding: 40px;
+    border-radius: 30.86px;
+    border: 2.314px solid #FF7028;
+    background: #ff702899;
+    backdrop-filter: blur(48.52642822265625px);
+}
+
+.auth-page .MuiGrid2-container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.auth-form {
+    margin-top: 10px;
+}
+
+.email-filed {
+    margin-bottom: 15px;
+}
+
+.fllname,
+.fllname a {
+    color: #fff;
+}
+
+.auth-form .MuiFormControl-root {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5.422px;
+    border: 0.771px solid var(--M2, #0916204e);
+    background: linear-gradient(114deg,
+            rgba(9, 22, 32, 0.5) 1.84%,
+            rgba(5, 25, 48, 0.5) 96.08%);
+}
+
+.auth-form .MuiOutlinedInput-input {
+    color: #fff;
+}
+
+.auth-form .MuiOutlinedInput-input::placeholder {
+    color: #bcbec0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffffde;
+    -webkit-box-shadow: 0 0 0px 1000px #08313c inset;
+    -webkit-transition: background-color 5000s ease-in-out 0s;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.form-submit button {
+    border-radius: 7.715px;
+    background: #FF7028;
+    color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px 45px;
+    text-transform: capitalize;
+    border-radius: 12px;
+}
+
+.email-filed input {
+    padding: 10px;
+}
+
+.chck-label {
+    /* font-family: Lexend; */
+    font-size: 15.25px;
+    font-weight: 400;
+    line-height: 16.88px;
+    text-align: left;
+    color: #fff;
+
+}
+
+.chck-label span {
+    color: #000;
+    margin: 0px 5px;
+}
+
+span.chk-com.Mui-checked,
+span.chk-com svg {
+    color: #14ddb6 !important;
+    fill: #14ddb6 !important;
+}
+
+.err-div {
+    color: red;
+}
+
+.twofa-title {
+    /* font-family: Lexend; */
+    font-size: 21.03px;
+    font-weight: 400;
+    line-height: 26.29px;
+    text-align: left;
+    color: #fff;
+    margin: 15px 0;
+}
+
+
+/* From Uiverse.io by Yaya12085 */ 
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icons {
+    height: 1.5rem;
+    width: 1.5rem;
+    animation: spin 1s linear infinite;
+    stroke: rgba(107, 114, 128, 1);
+  }
+  
+  .loading-text {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    color: rgba(107, 114, 128, 1);
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

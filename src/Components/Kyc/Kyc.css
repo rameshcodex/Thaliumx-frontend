@@ -1,0 +1,42 @@
+.Kyc {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.view-inp .MuiFormControl-root {
+  border: 1px solid #000;
+  border-radius: 6px;
+}
+
+.view-inp .MuiFormControl-root input {
+  padding: 12.5px 14px;
+}
+
+.view-inp .MuiFormLabel-root.Mui-disabled,
+.view-inp input.Mui-disabled {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+}
+
+.txt-white {
+  color: #fff;
+}
+
+.view-inp fieldset {
+  outline: none;
+  border: unset !important;
+}
+
+.doc-img {
+  /* padding: 10px; */
+width: 250px;
+height: 250px;
+border-radius: 10px;
+border: 2.5px dashed #fff;
+}
+
+.doc-img img{
+  width: 100%;
+  height: 100%;
+}

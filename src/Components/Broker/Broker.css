@@ -1,0 +1,36 @@
+.upl-logo img{
+width: 100%;
+height: 100%;
+}
+
+.upl-logo{
+    background-color: #ccc;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.sixe-must{
+    font-size: 10px;
+    position: absolute;
+    color: #948a8a;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.bx-shw{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.pa-r{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
