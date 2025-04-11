@@ -15,12 +15,6 @@ jobs:
         with:
           ref: main
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18 # Specify the Node.js version you need
-          cache: 'npm'
-
       - name: Connect to server and setup environment
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -91,7 +85,7 @@ jobs:
         run: |
           export NODE_OPTIONS="--max-old-space-size=4096" # Increase memory if needed
           CI=false npm run build # Disable warnings as errors
-          
+
       - name: List build folder for debug
         run: ls -la build
 
