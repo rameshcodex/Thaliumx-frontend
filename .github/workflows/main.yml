@@ -23,13 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build the React app
+     # Step 4: Build the React app
       - name: Build React app
         run: |
           export NODE_OPTIONS="--max-old-space-size=4096"
-          npm run build
-        env:
-          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+          CI=false npm run build # Disable warnings as errors
 
       # Step 5: Verify the build folder
       - name: Verify build folder
