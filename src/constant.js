@@ -1,9 +1,9 @@
 const consts = {
-  MainUrl: "http://13.61.165.12",
-  BackendUrl: "http://13.61.165.12/thaliumxapi",
+  MainUrl: "http://undefined",
+  BackendUrl: "http://undefined/thaliumxclonesapi",
   Main: "Development",
 
-  route: "thaliumxAdmin",
+  route: "thaliumxclones",
   // MainUrl: "http://localhost:3000",
   // BackendUrl: "http://localhost:3500/thaliumxapi",
   // Main: "Production",
