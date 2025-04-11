@@ -79,7 +79,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn install || npm install
+          npm ci
 
       - name: Build React app
         run: |
