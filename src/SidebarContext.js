@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars, eqeqeq */
+// eslint-disable-next-line react-hooks/exhaustive-deps
 import React, { createContext, useContext, useState, useMemo, useEffect } from "react";
 import SellIcon from "@mui/icons-material/Sell";
 import SubdirectoryArrowRightIcon from "@mui/icons-material/SubdirectoryArrowRight";
@@ -433,6 +434,7 @@ export const SidebarProvider = ({ children }) => {
 
     const [filteredDrawerData, setFilteredDrawerData] = useState(drawerDatas);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (userRole?.length === 0) {
             setFilteredDrawerData(drawerDatas);
@@ -448,7 +450,7 @@ export const SidebarProvider = ({ children }) => {
             }));
         }
     }, [userRole]);
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (brokers == "broker") {
             setFilteredDrawerData(drawerDatas.filter(item => {

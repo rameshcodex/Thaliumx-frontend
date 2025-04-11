@@ -39,7 +39,6 @@ export const AuthProvider = ({ children }) => {
   // useEffect(()=>{
 
   // },[auth])
-
   useEffect(() => {
     setUrl()
   }, [])

@@ -2,7 +2,7 @@
   "name": "marginfxadmin",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://13.247.59.8/thaliumxclones",
+  "homepage": "http://13.61.165.12/thaliumxAdmin",
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
